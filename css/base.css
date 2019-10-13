@@ -1,0 +1,80 @@
+@import "contentNested.css";
+@import "header.css";
+@import "sidebar.css";
+
+@media(max-width:320px){
+    .main-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(10%, auto) minmax(50%, auto);
+        grid-template-areas:
+        "hd"
+        "side"
+        "cont"
+        "ft";
+    }
+}
+
+@media(min-width:600px) and (max-width:900px){
+    .main-container{
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: auto minmax(70%, auto);
+        grid-template-areas:
+        "hd hd hd hd hd hd hd hd"
+        "side side cont cont cont cont cont cont"
+        "ft ft ft ft ft ft ft ft";
+    }
+}
+
+@media(min-width:901px){
+    .main-container{
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: auto minmax(70%, auto);
+        grid-template-areas:
+        "hd hd hd hd hd hd hd hd"
+        "side side side cont cont cont cont cont"
+        "ft ft ft ft ft ft ft ft";
+    }
+}
+
+.header{
+    grid-area: hd;
+    display: flex;
+    flex-direction: column;
+    border-style: groove;
+    border-color: aqua;
+    background-color: azure;
+    align-items: center;
+}
+
+.sidebar{
+    grid-area: side;
+    display: flex;
+    flex-direction: column;
+    border-style: groove;
+    border-color: blue;
+    background-color: azure;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    grid-area: cont;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px dashed red;
+    color: lightyellow;
+    background-color: grey;
+}
+
+.footer{
+    grid-area: ft;
+    border-color: black;
+    background-color: darkgrey;
+    text-align: center;
+    color: orangered;
+    font-size: 20px;
+}
